@@ -24,4 +24,7 @@ typedef BindingCallback(String left_key, String right_key, value);
 /// Event callback with [router]
 typedef EventCallback(Event event, Router router);
 
-/
+/// Event callback with [router] and [bindings]
+typedef EventWithDataCallback(Event event, Router router, Map bindings);
+
+s
