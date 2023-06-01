@@ -77,3 +77,15 @@ class Template {
                 if (bindings is! ObservableMap) {
                     bindings = new ObservableMap.from(bindings);
                 }
+                callback(left_key, right_key, value);
+                bindings.changes.listen((List<ChangeRecord> records) {
+                    records.forEach((record) {
+                        if (record is MapChangeRecord && record.key == right_key) {
+                            callback(left_key, right_key, record.newValue);
+                        }
+                    });
+                });
+            });
+        }
+    }
+
