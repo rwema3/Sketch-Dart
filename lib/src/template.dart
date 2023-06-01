@@ -47,3 +47,6 @@ class Template {
                 bindings.changes.listen((List<ChangeRecord> records) {
                     records.forEach((record) {
                         if (record is MapChangeRecord && record.key == parameters) {
+                            callback(null, parameters, bindings[parameters]);
+                        }
+                    });
