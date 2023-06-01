@@ -36,3 +36,7 @@ class Template {
     static NodeValidatorBuilder _validator;
 
     /// Bind each parameter
+    void _bindParameters(String parameters, Map bindings, BindingCallback callback, { expectFunction: false }) {
+        var pattern = new RegExp(r"^{");
+        if (!pattern.hasMatch(parameters)) {
+            if (bindings.containsKey(parameters)) {
