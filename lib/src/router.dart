@@ -51,3 +51,9 @@ abstract class Router extends Object with ChangeNotifier {
         for (View view in _views) {
             var pattern = new RegExp("^" + view.path.replaceAll('/', r'\/') + "\$");
             if (pattern.hasMatch(_path)) {
+                return view;
+            }
+        }
+        throw new Exception(_path);
+    }
+
