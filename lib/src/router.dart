@@ -35,3 +35,14 @@ abstract class Router extends Object with ChangeNotifier {
             window.history.pushState(null, '', value);
         }
     }
+
+    /// Add a new view  to the router
+    void addView(View view) {
+        if (_views == null) {
+            _views = new List();
+        }
+        _views.add(view);
+    }
+
+    /// Get the current view
+    ///
