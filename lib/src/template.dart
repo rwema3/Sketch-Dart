@@ -62,3 +62,8 @@ class Template {
                 left_key = match[2];
                 right_key = match[3];
                 if (expectFunction) {
+                    if (bindings[match[3]] is Function) {
+                        value = bindings[match[3]];
+                    } else {
+                        throw new Exception('A function was expected');
+                    }
