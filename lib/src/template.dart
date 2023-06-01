@@ -55,4 +55,6 @@ class Template {
                 print("Warning! Bind target '${parameters}' not found");
             }
         } else {
-
+            var left_key, right_key, value;
+            pattern = new RegExp(r"(([\w-]*)\s*:\s*([\w-]*)),?\s*");
+            var matches = pattern.allMatches(parameters);
