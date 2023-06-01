@@ -14,4 +14,6 @@
 
 part of sketch;
 
-s
+/// Router interface for [Template] bind-router
+abstract class Router extends Object with ChangeNotifier {
+    // Current path
