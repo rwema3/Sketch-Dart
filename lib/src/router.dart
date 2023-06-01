@@ -28,3 +28,10 @@ abstract class Router extends Object with ChangeNotifier {
     /// Getter for the current path
     @reflectable get path => _path;
 
+    /// Setter for the current path
+    @reflectable set path(value) {
+        _path = notifyPropertyChange(#path, _path, value);
+        if (pushState == null || pushState) {
+            window.history.pushState(null, '', value);
+        }
+    }
