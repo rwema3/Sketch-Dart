@@ -46,3 +46,8 @@ abstract class Router extends Object with ChangeNotifier {
 
     /// Get the current view
     ///
+    /// The current view is resolved by checking all view paths and returning the view associated to the current path
+    View get view {
+        for (View view in _views) {
+            var pattern = new RegExp("^" + view.path.replaceAll('/', r'\/') + "\$");
+            if (pattern.hasMatch(_path)) {
