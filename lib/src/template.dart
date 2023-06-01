@@ -58,3 +58,7 @@ class Template {
             var left_key, right_key, value;
             pattern = new RegExp(r"(([\w-]*)\s*:\s*([\w-]*)),?\s*");
             var matches = pattern.allMatches(parameters);
+            matches.forEach((match) {
+                left_key = match[2];
+                right_key = match[3];
+                if (expectFunction) {
