@@ -40,3 +40,6 @@ class Template {
         var pattern = new RegExp(r"^{");
         if (!pattern.hasMatch(parameters)) {
             if (bindings.containsKey(parameters)) {
+                if (bindings is! ObservableMap) {
+                    bindings = new ObservableMap.from(bindings);
+                }
