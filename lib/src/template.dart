@@ -50,3 +50,8 @@ class Template {
                             callback(null, parameters, bindings[parameters]);
                         }
                     });
+                });
+            } else {
+                print("Warning! Bind target '${parameters}' not found");
+            }
+        } else {
