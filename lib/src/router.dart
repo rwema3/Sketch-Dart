@@ -57,3 +57,24 @@ abstract class Router extends Object with ChangeNotifier {
         throw new Exception(_path);
     }
 
+    /// Get the current view bindings
+    Map get bindings {
+        for (View view in _views) {
+            var pattern = new RegExp("^" + view.path.replaceAll('/', r'\/') + "\$");
+            if (pattern.hasMatch(_path)) {
+                // Pattern matches as function parameters
+                if (view.bindings is Function) {
+                    var parameters = new List();
+                    var match = pattern.firstMatch(_path);
+                    for (var i = 1; i <= match.groupCount; i++) {
+                        parameters.add(match.group(i));
+                    }
+                    return view.bindings(parameters);
+                } else {
+                    return view.bindings;
+                }
+            }
+        }
+        throw new Exception(_path);
+    }
+}
