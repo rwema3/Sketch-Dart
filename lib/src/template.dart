@@ -67,3 +67,8 @@ class Template {
                     } else {
                         throw new Exception('A function was expected');
                     }
+                } else {
+                    if (bindings[match[3]] is Function) {
+                        value = bindings[match[3]]();
+                    } else {
+                        value = bindings[match[3]];
