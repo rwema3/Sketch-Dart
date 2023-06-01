@@ -72,3 +72,8 @@ class Template {
                         value = bindings[match[3]]();
                     } else {
                         value = bindings[match[3]];
+                    }
+                }
+                if (bindings is! ObservableMap) {
+                    bindings = new ObservableMap.from(bindings);
+                }
