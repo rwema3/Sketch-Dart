@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dataset test</title>
+    </head>
+    <body>
+        <div id="test1">
+            <p><span data-bind-text="text"></span></p>
+        </div>
+        <div id="test2">
+            <p><span data-bind-style="style"></span></p>
+        </div>
+        <div id="test3">
+            <p><span data-bind-style="{color: textColor, background-color: backgroundColor}"></span></p>
+        </div>
+        <div id="test4">
+            <p><a data-bind-attr="{href: action}">Action</a></p>
+        </div>
+        <div id="test5">
+            <p><span data-bind-class="{box: isBox, house: isHouse, tree: isTree}">Action</span></p>
+        </div>
+        <div id="test6">
+            <p><span data-bind-visible="isMale">Action</span></p>
+        </div>
+        <div id="test7">
+            <p><a data-bind-event="{click: click}">Action</a></p>
+        </div>
+        <div id="test8">
+            <div data-bind-router="router"></div>
+        </div>
+        <div id="test9">
+            <div data-bind-router="router"></div>
+        </div>
+        <div id="test10">
+            <ul data-bind-foreach="list">
+                <li><a data-bind-attr="{href: url}" data-bind-text="label"></a></li>
+            </ul>
+        </div>
+        <script type="application/dart" src="template_test.dart"></script>
+        <script src="/packages/browser/dart.js"></script>
+    </body>
+</html>

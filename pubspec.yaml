@@ -1,0 +1,13 @@
+name: sketch
+version: 0.1.0+11
+author: Marcos Cooper <marcos@releasepad.com>
+description: Package library that will ease the development of server backed single page responsive Web applications
+homepage: https://github.com/marcos-c/sketch-dart
+dependencies:
+  observe: '>=0.12.1+1 <0.13.0'
+dev_dependencies:
+  browser: '>=0.10.0+2 <0.11.0'
+  unittest: '>=0.11.0+5 <0.12.0'
+transformers:
+- $dart2js:
+    minify: true
