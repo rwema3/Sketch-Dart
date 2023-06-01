@@ -43,3 +43,7 @@ class Template {
                 if (bindings is! ObservableMap) {
                     bindings = new ObservableMap.from(bindings);
                 }
+                callback(null, parameters, bindings[parameters]);
+                bindings.changes.listen((List<ChangeRecord> records) {
+                    records.forEach((record) {
+                        if (record is MapChangeRecord && record.key == parameters) {
