@@ -21,3 +21,10 @@ abstract class Router extends Object with ChangeNotifier {
 
     /// True if this router should pushState
     bool pushState;
+
+    // Views
+    List<View> _views;
+
+    /// Getter for the current path
+    @reflectable get path => _path;
+
