@@ -27,4 +27,12 @@ typedef EventCallback(Event event, Router router);
 /// Event callback with [router] and [bindings]
 typedef EventWithDataCallback(Event event, Router router, Map bindings);
 
-s
+/// This class provides an easy to use templating system with data bindings
+///
+/// Binding parameters are set throgh dataset attributes.
+///
+/// Source bindings are set using [Map]s.
+class Template {
+    static NodeValidatorBuilder _validator;
+
+    /// Bind each parameter
